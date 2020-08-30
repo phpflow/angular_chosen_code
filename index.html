@@ -1,0 +1,42 @@
+	<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.js"></script>
+		<link rel="stylesheet" href="assets/chosen.min.css" />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+		<script src="app.js"></script>
+		<link rel="image_src" href="/assets/css/chosen-sprite.png">
+		<script src="assets/chosen.jquery.min.js"></script>
+		<script src="assets/angular-chosen/angular-chosen.min.js"></script>
+		<style>
+			tr.shown a{
+				color : red;
+			}
+			.green {
+				color : green;
+			}
+		</style>
+	</head>
+	<body ng-app="TestApp" ng-controller="testController">
+		<div my-customer></div>
+		<div class="container">
+			<h1>Single select</h1>
+			<div class="well row">
+				<div class="col-sm-6">{{empName}}</div>
+				<div class="col-sm-6"><select class="chosen-select form-control col-sm-3" id="form-field-select-3" data-placeholder="Choose a Employee..." ng-model="empName" chosen>
+					<option value="">Select Employee</option>
+					<option ng-repeat="emp in userList" value="{{emp.name}}">{{emp.name}}</option>
+				</select>
+			</div>
+		</div>
+		<h1>Multiple select</h1>
+		<div class="well row">
+			<div class="col-sm-6">{{empName1}}</div> <div class="col-sm-6"><select class="chosen-select form-control col-sm-3" id="form-field-select-3" data-placeholder="Choose multiple Employee..." ng-model="empName1" chosen multiple>
+			<option ng-repeat="emp in userList" value="{{emp.name}}">{{emp.name}}</option>
+		</select>
+	</div>
+</div>
+
+</div>
+</body>
+</html>
